@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'CRUD Produk - Next.js + MySQL',
-  description: 'Contoh aplikasi CRUD dengan Next.js dan MySQL (Aiven)',
+  title: 'RuangDana — Catatan Pengeluaran',
+  description: 'Catat dan pantau pengeluaran harianmu dengan RuangDana.',
 };
 
 export default function RootLayout({ children }) {

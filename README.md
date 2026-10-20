@@ -1,8 +1,8 @@
-# CRUD Produk — Next.js + MySQL (Aiven) + Vercel
+# RuangDana — Next.js + MySQL (Aiven) + Vercel
 
-Aplikasi CRUD sederhana (Create, Read, Update, Delete) untuk data "produk",
-dibangun dengan Next.js App Router dan database MySQL, siap deploy ke Vercel
-dengan database di Aiven.
+Aplikasi pencatatan pengeluaran dengan dashboard, ringkasan, kategori, grafik
+bulanan, dan pengelolaan transaksi. Dibangun dengan Next.js App Router dan
+database MySQL, siap deploy ke Vercel dengan database di Aiven.
 
 ## Struktur Project
 
@@ -10,7 +10,7 @@ dengan database di Aiven.
 app/
   api/products/route.js         -> GET (list), POST (create)
   api/products/[id]/route.js    -> GET (detail), PUT (update), DELETE
-  page.js                       -> Halaman utama (tabel + form)
+  page.js                       -> Dashboard dan pengelolaan transaksi
   layout.js
   globals.css
 lib/
@@ -63,7 +63,7 @@ Jalankan secara lokal:
 npm run dev
 ```
 
-Buka http://localhost:3000 — kamu akan melihat form tambah produk dan tabel daftar produk.
+Buka http://localhost:3000 — kamu akan melihat dashboard pengeluaran dan riwayat transaksi.
 
 ## 3. Push ke GitHub
 
@@ -94,10 +94,14 @@ Pastikan `.env.local` **tidak** ikut ter-commit (sudah otomatis diabaikan lewat 
 
 ## Fitur
 
-- **Create**: tambah produk baru lewat form (nama, deskripsi, harga)
-- **Read**: daftar semua produk otomatis dimuat saat halaman dibuka
-- **Update**: klik "Edit" pada baris produk untuk mengubah data
-- **Delete**: klik "Hapus" untuk menghapus produk (dengan konfirmasi)
+- **Dashboard**: ringkasan pengeluaran bulan ini, transaksi, grafik, dan kategori teratas
+- **Create**: catat pengeluaran (nama, kategori, jumlah)
+- **Read**: daftar transaksi dimuat otomatis saat halaman dibuka
+- **Update**: edit transaksi yang sudah dicatat
+- **Delete**: hapus transaksi dengan konfirmasi
+
+Untuk kompatibilitas dengan database yang ada, transaksi memakai tabel `products`:
+nama disimpan di `name`, kategori di `description`, dan nominal di `price`.
 
 ## Catatan
 
