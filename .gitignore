@@ -3,3 +3,5 @@ node_modules
 .env.local
 .env
 npm-debug.log*
+git config --list
+git config --list
